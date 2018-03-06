@@ -25,7 +25,7 @@ router.get("/api/company/:id", function(req, res) {
     });
 });
 
-//get jobs and job skills for company
+// //get jobs and job skills for company
 // router.get("/api/companyjobs/:id", function(req, res) {
 //   db.Company
 //     .findAll({
@@ -109,7 +109,7 @@ router.post("/api/job", function(req, res) {
 });
 
 //update company
-app.put("/api/company", function(req, res) {
+router.put("/api/company", function(req, res) {
   db.Company
     .update(req.body, {
       where: {
