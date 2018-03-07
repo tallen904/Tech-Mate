@@ -11,11 +11,9 @@ router.get("/api/employees", (req, res) => {
 
 // Post a new employee
 router.post("/api/employees", (req, res) => {
-  db.Employee.create(req.body,
-    {
-      include: [db.EmployeeSkills]
-    }
-  ).then((dbpost) => res.json(dbpost))
+  db.Employee.create(req.body, {
+    include: [db.EmployeeSkills]
+  }).then(dbpost => res.json(dbpost));
 });
 
 module.exports = router;
