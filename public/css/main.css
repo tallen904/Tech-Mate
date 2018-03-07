@@ -1,0 +1,94 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    body {
+        background-image: url("../assets/images/revised.jpg");
+        background-repeat: no-repeat;
+        background-size: cover
+    }
+    .banner-txt {
+        margin-bottom: 10%;
+        margin-left: 2%;
+        margin-right: 2%;
+        display: flex;
+        flex-direction: row;
+        height: 10%;
+        padding-left: 40px;
+    }
+    .tech {
+        position: relative;
+        left: -500px;
+        color: red;
+        font-family: 'Audiowide', cursive;
+        font-size: 40px
+    }
+    .mate {
+        position: relative;
+        right: -500px;
+        color: black;
+        font-family: 'Audiowide', cursive;
+        font-size: 40px;
+    }
+    .post {
+        color: red;
+        font-family: 'Audiowide', cursive;
+        font-size: 18px;
+        margin-left: 35px
+    }
+    .show {
+        color: white;
+        font-family: 'Audiowide', cursive;
+        font-size: 15px;
+        margin-left: 45px
+    }
+    .option-holders {
+        display: flex;
+        flex-direction: row
+    }
+    .divider-1 {
+        border-color: red;
+    }
+    .btn-holder {
+        display: flex;
+        flex-direction: row
+    }
+    .post-btn {
+        background-color: red;
+        color: white;
+        width: 90px;
+        height: 40px;
+        border: solid 2px black;
+        margin-left: 35px;
+    }
+    .show-btn {
+        background-color: white;
+        color: black;
+        width: 90px;
+        height: 40px;
+        border: solid 2px black;
+        margin-left: 100px;
+    }
+    .navbar-header {
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(245, 245, 245);
+        box-shadow: 0 8px 6px -6px black;
+    }
+    .tech-2 {
+        margin-left: 10px;
+        color: red;
+        font-family: 'Audiowide', cursive;
+        font-size: 20px
+    }
+    .mate-2 {
+        color: black;
+        font-family: 'Audiowide', cursive;
+        font-size: 20px
+    }
+    .form-holder {
+        margin-top: 4%;
+        height: 520px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        border: solid 1px black;
+        box-shadow: 6px 6px 6px -6px black;
+    }
+}
