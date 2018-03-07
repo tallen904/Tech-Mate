@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
   Jobs.associate = function(models) {
     // associations can be defined here
     Jobs.belongsTo(models.Company)
-    Jobs.belongsToMany(models.Employee ,{through: "EmployeeJobs"})
+    Jobs.belongsToMany(models.Employee ,{through: "EmployeeJobs"});
+    Jobs.hasOne(models.JobSkills);
   };
   return Jobs;
 };
