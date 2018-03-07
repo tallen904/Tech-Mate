@@ -1,4 +1,5 @@
 "use strict";
+const db = require('../models/')
 module.exports = (sequelize, DataTypes) => {
   var Employee = sequelize.define("Employee", {
     name: { type: DataTypes.STRING(100), notNull: true },
@@ -18,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   Employee.associate = function(models) {
     // associations can be defined here
     Employee.hasMany(models.Jobs)
+    Employee.hasOne(models.EmployeeSkills)
   };
   return Employee;
 };

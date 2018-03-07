@@ -32,7 +32,8 @@ const employeeApiRoutes = require("./routes/employee-api-routes.js");
 const htmlRoutes = require("./routes/html-routes.js");
 
 app.use(employerApiRoutes);
-// app.use(employeeApiRoutes);
+app.use(employeeApiRoutes);
+
 app.use(htmlRoutes);
 
 // Syncing our sequelize models and then starting our Express app

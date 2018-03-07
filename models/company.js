@@ -6,13 +6,6 @@ module.exports = (sequelize, DataTypes) => {
       name: { type: DataTypes.STRING(100), notNull: true },
       email: { type: DataTypes.STRING, validate: { isEmail: true } },
       phoneNumber: { type: DataTypes.STRING },
-      jobDescription: {
-        type: DataTypes.STRING,
-        notNull: true,
-        validate: {
-          len: [1, 250]
-        }
-      },
       website: {
         type: DataTypes.STRING,
         validate: { isUrl: true }
