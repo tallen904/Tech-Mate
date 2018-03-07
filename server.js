@@ -31,13 +31,14 @@ const employerApiRoutes = require("./routes/employer-api-routes.js");
 const employeeApiRoutes = require("./routes/employee-api-routes.js");
 const htmlRoutes = require("./routes/html-routes.js");
 
-// app.use(employerApiRoutes);
+app.use(employerApiRoutes);
 app.use(employeeApiRoutes);
+
 app.use(htmlRoutes);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({force: true}).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
