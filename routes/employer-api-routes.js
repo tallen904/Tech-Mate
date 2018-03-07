@@ -5,14 +5,14 @@ const db = require("../models");
 // Routes
 // =============================================================
 
-// GET route for getting all of the posts
+// GET route for getting all of the companies
 router.get("/api/companies/", function(req, res) {
   db.Company.findAll({}).then(function(dbCompany) {
     res.json(dbCompany);
   });
 });
 
-// Get route for returning posts of a specific category
+// Get route for returning company based of id
 router.get("/api/company/:id", function(req, res) {
   db.Company
     .findAll({
@@ -26,18 +26,21 @@ router.get("/api/company/:id", function(req, res) {
 });
 
 // //get jobs and job skills for company
-// router.get("/api/companyjobs/:id", function(req, res) {
-//   db.Company
-//     .findAll({
-//       where: {
-//         id: req.params.id
-//       },
-//       include: [db.Jobs] && [db.JobSkills]
-//     })
-//     .then(function(dbCompanyjobs) {
-//       res.json(dbCompanyjobs);
-//     });
-// });
+router.get("/api/companyjobs/:id", function(req, res) {
+  db.Company
+    .findAll({
+      where: {
+        id: req.params.id
+      },
+      include: [{
+          model: db.Jobs,
+          include: db.JobSkills
+      }]
+    })
+    .then(function(dbCompanyjobs) {
+      res.json(dbCompanyjobs);
+    });
+});
 
 //get all jobs
 router.get("/api/jobs/", function(req, res) {
@@ -59,14 +62,14 @@ router.get("/api/jobs/:id", function(req, res) {
     });
 });
 
-//get jobs by company id
+//get jobs by company id with job skills
 router.get("/api/jobsbycompany/:id", function(req, res) {
   db.Jobs
     .findAll({
       where: {
         companyid: req.params.id
       },
-      include: [db.Company]
+      include: [db.Company, db.JobSkills]
     })
     .then(function(dbJobs) {
       res.json(dbJobs);
@@ -86,6 +89,23 @@ router.get("/api/jobskills/:jobid", function(req, res) {
       res.json(dbJobskills);
     });
 });
+
+//create Job and Skills
+router.post("/api/jobbyskills/:/companyid", function(req, res)
+{
+db.Jobs
+  .create(
+    {
+      
+      }
+    },
+    {
+      include: [db.JobSkills]
+    }
+  )
+  .then(() => console.log("success"));
+});
+
 
 //create company
 router.post("/api/company", function(req, res) {
