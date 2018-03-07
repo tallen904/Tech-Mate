@@ -81,7 +81,7 @@ $(document).ready(function() {
   }
 
   function submitJob(job) {
-    $.post("/api/jobs", company, function() {
+    $.post("/api/jobs", job, function() {
       console.log("Successfully created new job");
     });
   }

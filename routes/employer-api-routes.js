@@ -93,17 +93,9 @@ router.get("/api/jobskills/:jobid", function(req, res) {
 //create Job and Skills
 router.post("/api/jobbyskills/:/companyid", function(req, res)
 {
-db.Jobs
-  .create(
-    {
-      
-      }
-    },
-    {
-      include: [db.JobSkills]
-    }
-  )
-  .then(() => console.log("success"));
+ db.Jobs.create(req.body, { include : [db.JobSkills]}).then(function(dbjobinfo){
+   res.json(dbjobinfo);
+ }) 
 });
 
 
