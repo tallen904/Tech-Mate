@@ -1,34 +1,33 @@
+$(document).ready(function() {
+  $(".tech").animate(
+    {
+      left: 5
+    },
+    500
+  );
 
-$(document).ready(function () {
+  $(".mate").animate(
+    {
+      right: 0
+    },
+    1000
+  );
 
-    $('.tech').animate({
-        left: 5
-    }, 500);
-
-    $('.mate').animate({
-        right: 0
-    },1000);
-
-
-    $(document).on('click', '.post-btn', function(){
-       renderPostPage()
-    })
-
+  $(document).on("click", ".post-btn", function() {
+    renderPostPage();
+  });
 });
 
 function renderPostPage() {
-    $('.all-content').empty();
-    $('body').css('background-image', 'none');
-    insertNavBar();
-    const formHolder = $('<div class="form-holder">')
-    $('.all-content').append(formHolder)
-
-    
+  $(".all-content").empty();
+  $("body").css("background-image", "none");
+  insertNavBar();
+  const formHolder = $('<div class="form-holder">');
+  $(".all-content").append(formHolder);
 }
 
 function insertNavBar() {
-    const navBar = 
-    `<nav class="navbar navbar-default">
+  const navBar = `<nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="header-text">
@@ -41,56 +40,6 @@ function insertNavBar() {
                 </div>
             </div>
         </div>
-    </nav>`
-    $('.all-content').append(navBar);
+    </nav>`;
+  $(".all-content").append(navBar);
 }
-
-$(document).ready(function(){
-    $('select').material_select();
-})
-const name = $('#name')
-const email = $('#email')
-const summary = $('#summary')
-const githubUrl = $('#url')
-const phone = $('#phone')
-var html = $('#html')
-var css = $('#css')
-var javascript = $('#javascript')
-var nodejs = $('#nodejs')
-var reactjs = $('#reactjs')
-
-
-
-$('#employeeForm').on('submit', postHandler)
-
-
-function postHandler(event){
-    event.preventDefault()
-
-    if(!name.val().trim() || !email.val().trim() || !summary.val().trim() || !githubUrl.val().trim() || !phone.val().trim() || !html.val() || !css.val() || !javascript.val() || !nodejs.val() || !reactjs.val()){
-        return
-    }
-
-    var newEmployee = {
-        name: name.val().trim(),
-        email: email.val().trim(),
-        summary: summary.val().trim(),
-        githubUrl: githubUrl.val().trim(),
-        phone: parseInt(phone.val().trim()),
-        EmployeeSkill: {
-            html: parseInt(html.val()),
-            css: parseInt(css.val()),
-            javascript: parseInt(javascript.val()),
-            nodejs: parseInt(nodejs.val()),
-            reactjs: parseInt(reactjs.val())
-        }
-    }
-    submitEmployee(newEmployee)
-}
-
-function submitEmployee(employee){
-    $.post('/api/employees', employee, function(){
-        console.log('Successfully created a new employee!');
-    })
-}
-
