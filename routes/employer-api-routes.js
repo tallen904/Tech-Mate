@@ -91,9 +91,9 @@ router.get("/api/jobskills/:jobid", function(req, res) {
 });
 
 //create Job and Skills
-router.post("/api/jobbyskills/:/companyid", function(req, res)
+router.post("/api/jobbyskills/", function(req, res)
 {
- db.Jobs.create(req.body, { include : [db.JobSkills]}).then(function(dbjobinfo){
+ db.Jobs.create(req.body, {include : [db.JobSkills]}).then(function(dbjobinfo){
    res.json(dbjobinfo);
  }) 
 });
@@ -107,7 +107,7 @@ router.post("/api/company", function(req, res) {
 });
 
 //create skills for job
-router.post("/api/job", function(req, res) {
+router.post("/api/jobskills", function(req, res) {
   db.JobSkills.create(req.body).then(function(dbSkiils) {
     res.json(dbSkiils);
   });

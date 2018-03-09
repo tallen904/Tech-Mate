@@ -2,152 +2,95 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TechMate</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
-    <!--Materialize-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!--My CSS-->
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/employer.css" />
-    <!--Jquery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <!--My JS-->
-    <script src="../js/company-forms.js"></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TechMate</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Google Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+	<!--Materialize-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<!--My CSS-->
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/employer.css" />
+	<!--Jquery-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<!--My JS-->
+	<script src="../js/company-forms.js"></script>
 </head>
+
 <body>
 
-<div class="all-content">
-    <div class="logo-div">
-        <img class="logo" src="../assets/images/techmate-logo.jpg">
-    </div>
-    <div class="navigation">
-        <div class="icon-holder">
-            <img class="bar-icon" src="../assets/images/bars-icon.jpg">
-        </div>
-    </div>
+	<div class="all-content">
+		<div class="logo-div">
+			<img class="logo" src="../assets/images/techmate-logo.jpg">
+		</div>
+		<div class="navigation">
+			<div class="icon-holder">
+				<img class="bar-icon" src="../assets/images/bars-icon.jpg">
+			</div>
+		</div>
 
-    <div class="title-text">
-        <h class="tech">TECH</h>
-        <h class="mate">MATE</h>
-    </div>
+		<div class="title-text">
+			<h class="tech">TECH</h>
+			<h class="mate">MATE</h>
+		</div>
 
-    <div class="form-div">
-        <form id="companyform">
-            <h class="form-headers">NAME:</h>
-            <input type="text" id="name" class="validate">
-            <br>
-            <h class="form-headers">EMAIL:</h>
-            <input type="email" id="email" class="validate">
-            <br>
-            <h class="form-headers">TELEPHONE:</h>
-            <input type="tel" id="telephone" type="tel" class="validate">
-            <br>
-            <h class="form-headers">WEBSITE:</h>
-            <input type="text" id="website" class="validate">
+		<div class="form-div">
+			<h1 class="company-header">ENTER YOUR COMPANY INFO:</h1>
+			<div class="form-holder">
+				<div class="row">
+					<form class="companyform col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<input placeholder="Winston Smith" id="name" type="text" class="validate">
+								<label for="name">Full Name</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s4">
+								<input id="email" type="email" class="validate">
+								<label for="email">Email</label>
+							</div>
+							<div class="input-field col s4">
+								<input id="telephone" type="tel" class="validate">
+								<label for="telephone">Telephone</label>
+							</div>
+							<div class="input-field col s4">
+								<input id="website" type="text" class="validate">
+								<label for="website">Website URL</label>
+							</div>
+						</div>
+						<div>
+							<br />
+							<button type="submit" class="btn btn-success submit">Submit</button>
+						</div>
+						<div class="company-container">
+							<h1>Company</h1>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Website</th>
+										<th>Jobs Available</th>
+										<th>New Job Posting</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+						</div>
+					</form>
 
-            <br>
+				</div>
+				<div class="jobs-container">For Job listing test</div>
+			</div>
 
-            <button type="submit" class="btn btn-success submit">Submit</button>
-
-        </form>
-    </div>
-
-
-
-
-
-</div>
-
-
+			<div class="footer">
+				<h class="footer-txt">2018</h>
+			</div>
+		</div>
+	</div>
 
 </body>
 
 </html>
-
-
-
-
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-<!-- <body>
-
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <div class="header-text">
-                    <h class="tech-2">TECH</h>
-                    <h class="mate-2">MATE</h>
-                </div>
-                <div class="header-txt">
-                    <h class="header-txt">Employers</h>
-                </div>
-            </div>
-        </div>
-        </div>
-    </nav>
-
-    <div class="form-div">
-        <img class="triangle" src="../assets/images/triangle.jpg">
-        <h1 class="company-header">ENTER YOUR COMPANY INFO:</h1>
-        <div class="form-holder">
-            <form class="companyform"> -->
-<!-- <div class="first-form-section">
-                    <h class="form-headers">NAME:</h>
-                    <input type="text" id="name" class="validate">
-                    <br>
-                    <h class="form-headers">EMAIL:</h>
-                    <input type="email" id="email" class="validate">
-                    <br>
-                    <h class="form-headers">TELEPHONE:</h>
-                    <input type="tel" id="telephone" class="validate">
-                    <br>
-                    <h class="form-headers">WEBSITE URL:</h>
-                    <input type="text" id="website" class="validate">
-                </div>
-
-                <div class="second-form-section">
-                    <h class="form-headers">JOB TITLE:</h>
-                    <input type="text" id="jobTitle" class="validate">
-                    <br>
-                    <h class="form-headers">JOB DESCRIPTION:</h>
-                    <textarea id="jobDescription"></textarea>
-                </div> -->
-
-<!-- <div class="skills-div">
-                    <h class="skills-header">Enter the Ideal Skill Levels for the Job</h>
-                            <h class="form-headers">HTML</h><br>
-                            <div id="html">
-                                <select id="html-values">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
-                                </select>
-                            <div>
-                </div>
-            </form>
-        </div>
-
-        <img class="inverse-triangle" src="../assets/images/flipped-traingle.jpg">
-    </div>
-
-
-
-
-
-    <div class="footer">
-        <h class="footer-txt">2018</h>
-    </div> -->
