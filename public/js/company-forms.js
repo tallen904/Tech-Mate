@@ -1,9 +1,18 @@
 $(document).ready(function() {
+<<<<<<< HEAD
+
+  $(document).on('click', '.fill-skills', function () {
+    $('.first-form-section').hide();
+    $('.second-form-section').hide();
+    $('.fill-skills').hide()
+  })
+=======
   $(document).on("click", ".fill-skills", function() {
     $(".first-form-section").hide();
     $(".second-form-section").hide();
     $(".fill-skills").hide();
   });
+>>>>>>> 72fe50c9676c352f15fcdf33963190bccb89357e
 
   $("select").material_select();
 

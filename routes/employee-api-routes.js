@@ -9,11 +9,24 @@ router.get("/api/employees", (req, res) => {
   });
 });
 
+router.get('/api/employees/:id', (req, res) => {
+  db.Employee.findOne({
+    where: {
+      id: req.params.id
+    }
+  }).then(employee =>{
+    console.log(employee)
+    res.json(employee)
+  })
+})
+
 // Post a new employee
 router.post("/api/employees", (req, res) => {
   db.Employee.create(req.body, {
     include: [db.EmployeeSkills]
-  }).then(dbpost => res.json(dbpost));
+  }).then(dbpost => {
+    res.json(dbpost)
+  });
 });
 
 module.exports = router;
