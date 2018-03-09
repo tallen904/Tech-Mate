@@ -4,10 +4,7 @@ $(document).ready(function() {
     $('.first-form-section').hide();
     $('.second-form-section').hide();
     $('.fill-skills').hide()
-
   })
-
-
 
   $("select").material_select();
 

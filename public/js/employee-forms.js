@@ -42,8 +42,29 @@ function postHandler(event){
 }
 
 function submitEmployee(employee){
-    $.post('/api/employees', employee, function(){
+    $.post('/api/employees', employee, function(data){
         console.log('Successfully created a new employee!');
-        window.location.href = '/match'
+        getEmployee(data.id)
     })
+}
+
+function getEmployee(id){
+    $.get(`/api/employees/${id}`, function(data){
+        console.log(data)
+        changePage('/match').then(function(){
+            $(document).ready(function(){
+                displayEmployee(data)
+            })
+        })
+    })
+}
+
+function displayEmployee(employee){
+    var newInfo = $('<p>');
+    newInfo.text(employee.name)
+    $('#employeeInfo').append(newInfo)
+}
+
+function changePage(url){
+    window.location.href = url
 }
