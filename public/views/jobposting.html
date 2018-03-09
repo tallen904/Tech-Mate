@@ -11,7 +11,7 @@
     <!--Materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--My CSS-->
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/employer.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/jobposting.css" />
     <!--Jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -36,13 +36,16 @@
             <h class="mate">MATE</h>
         </div>
 
+        <div class="company-txt">Fill Out The Job Info Below</div>
+
         <div class="form-div">
             <form id="jobform">
                 <h class="form-headers">JOB TITLE:</h>
-                <textarea id="jobTitle" class="validate"></textarea>
+                <input id="jobTitle" class="validate"></textarea>
                 <br>
-                <h class="form-headers">JOB DESCRIPTION</h>
+                <h class="form-headers">JOB DESCRIPTION:</h><br>
                 <textarea id="jobDescription" class="validate"></textarea>
+                <br>
                 <br>
                 <h class="skills-header">Enter The Ideal Skill Levels for the Job</h>
                 <br>
@@ -69,7 +72,7 @@
                         </select>
                     </div>
 
-                    <div class="input-field col s2">
+                    <div class="input-field col s3">
                         <select id='javascript'>
                             <option value="" disabled selected>JavaScript</option>
                             <option value="1">1</option>
