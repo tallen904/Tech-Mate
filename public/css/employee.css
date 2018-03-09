@@ -129,6 +129,12 @@
     border-radius: 30px
 }
 
+   .submit {
+       margin-left: 35%;
+       background-color: rgb(207, 164, 81);
+       font-size: 18px
+   }
+
 /* .navbar-header {
     display: flex;
     flex-direction: row;
