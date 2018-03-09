@@ -44,5 +44,6 @@ function postHandler(event){
 function submitEmployee(employee){
     $.post('/api/employees', employee, function(){
         console.log('Successfully created a new employee!');
+        window.location.href = '/match'
     })
 }
