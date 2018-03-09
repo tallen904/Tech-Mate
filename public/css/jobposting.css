@@ -69,12 +69,9 @@
     box-shadow: 9px 9px 5px -2px rgb(114, 43, 3);
 }
 
-#name,
-#email,
-#telephone,
-#website,
-#jobTitle
-#jobDescription {
+#jobTitle,
+ #jobDescription,
+  {
     width: 160px;
     height: 20px;
     margin-left: 10px;

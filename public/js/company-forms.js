@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  $(document).on("click", ".fill-skills", function() {
+    $(".first-form-section").hide();
+    $(".second-form-section").hide();
+    $(".fill-skills").hide();
+  });
+
   $("select").material_select();
 
   //js selectors
@@ -13,7 +19,7 @@ $(document).ready(function() {
 
   // Job info
   const jobTitle = $("#jobTitle");
-  const jobDescription = $("jobDescription");
+  const jobDescription = $("#jobDescription");
   // job skills
   var html = $("#html");
   var css = $("#css");
@@ -21,8 +27,15 @@ $(document).ready(function() {
   var nodejs = $("#nodejs");
   var reactjs = $("#reactjs");
 
+  var url = window.location.search;
+  var companyId;
+  if (url.indexOf("?company_id=") !== -1) {
+    companyId = url.split("=")[1];
+    getJobsbyCompany(companyId);
+  }
   $(".companyform").on("submit", handleCompanySubmit);
   $(".jobform").on("submit", handleJobSubmit);
+
   //alert(formclicked);
   // A function for handling what happens when the form to create a new company is submitted
   function handleCompanySubmit(event) {
@@ -43,16 +56,13 @@ $(document).ready(function() {
     submitCompany(newCompany);
   }
 
-  function handleJobSubmit(event, companyid) {
+  function handleJobSubmit(event) {
     event.preventDefault();
-    event.preventDefault();
-
+    console.log(companyId);
+    console.log("HandleForm");
     if (
-      !name.val().trim() ||
-      !email.val().trim() ||
-      !summary.val().trim() ||
-      !githubUrl.val().trim() ||
-      !phone.val().trim() ||
+      !jobTitle.val().trim() ||
+      !jobDescription.val().trim() ||
       !html.val() ||
       !css.val() ||
       !javascript.val() ||
@@ -65,8 +75,8 @@ $(document).ready(function() {
     var newjob = {
       jobTitle: jobTitle.val().trim(),
       jobDescription: jobDescription.val().trim(),
-      CompanyId: companyid,
-      JobSkills: {
+      CompanyId: companyId,
+      JobSkill: {
         html: parseInt(html.val()),
         css: parseInt(css.val()),
         javascript: parseInt(javascript.val()),
@@ -85,12 +95,12 @@ $(document).ready(function() {
     newTr.append("<td>" + companyData.name + "</td>");
     newTr.append("<td> " + companyData.website + "</td>");
     newTr.append(
-      "<td><a href='/alljobs?company_id=" +
+      "<td><a href='/jobs?company_id=" +
         companyData.id +
         "'>Go to Jobs</a></td>"
     );
     newTr.append(
-      "<td><a href='/jobposting?company_id=" +
+      "<td><a href='/postjob?company_id=" +
         companyData.id +
         "'>Post a Job</a></td>"
     );
@@ -139,18 +149,18 @@ $(document).ready(function() {
       //console.log(company);
       console.log("Successfully created new company");
       getCompany(result);
-      getJobsbyCompany(result.id);
+      //getJobsbyCompany(result.id);
     });
   }
 
   function submitJob(job) {
-    $.post("/api/jobs", job, function(result) {
+    $.post("/api/jobbyskills/", job, function(result) {
       console.log("Successfully created new job");
     });
   }
 
   function getJobsbyCompany(id) {
-    $.get("/api/companyjobs/"+id, function(result) {
+    $.get("/api/companyjobs/" + id, function(result) {
       console.log(result);
       renderJobs(result[0].Jobs);
     });
@@ -159,7 +169,7 @@ $(document).ready(function() {
   function renderJobs(result) {
     //console.log(result)
     result.forEach(function(item) {
-    //console(item);
+      //console(item);
       var divInner = $(`
               <div class="">
                 <div>Job Title: ${item.jobTitle}</div>
@@ -181,5 +191,4 @@ $(document).ready(function() {
       jobContainer.append(divInner);
     }, this);
   }
-
 });
