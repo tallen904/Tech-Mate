@@ -1,4 +1,122 @@
-.navbar-header {
+.all-content {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url("../assets/images/large-background.jpg");
+}
+
+.navigation {
+    z-index: -1;
+    position: relative;
+    margin-top: 35px;
+    width: 100%;
+    background-color: rgba(128, 155, 176, 0.5);
+    border: solid 2px rgb(114, 43, 3);
+    height: 50px;
+    padding-right: 10px
+}
+
+.logo-div {
+    margin-left: 10px;
+    margin-top: 10px;
+    z-index: 1;
+    opacity: 0.9;
+    position: absolute;
+    background-color: black;
+    width: 130px;
+    height: 130px;
+    border: solid 4px rgb(128, 155, 176)
+}
+
+.btn-default {
+    margin-left: 1100px;
+}
+
+.bar-icon {
+    position: sticky;
+    margin-top: 5px;
+    border: solid 3px rgb(114, 43, 3);
+    width: 45px;
+    height: 35px;
+    left: 1200px;
+    border-radius: 5px
+}
+
+.title-text {
+    position: relative;
+    font-family: 'Marcellus SC', serif;
+    font-weight: bold;
+    font-size: 70px;
+    margin-left: 160px
+}
+
+.tech {
+    color: rgb(114, 43, 3);
+    text-shadow: 3px 3px 3px black
+}
+
+.mate {
+    color: rgb(207, 164, 81);
+}
+
+
+  .logo {
+      width: 100%
+  }
+
+  .logo-div {
+      box-shadow: 9px 9px 5px -2px rgb(114, 43, 3);
+  }
+
+  #name,
+  #email,
+  #phone,
+  #url,
+  #summary {
+      width: 160px;
+      height: 20px;
+      margin-left: 10px;
+      border-color: black;
+      color: black
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .navbar-header {
     display: flex;
     flex-direction: row;
     background-color: rgb(241, 241, 239);
@@ -56,7 +174,7 @@
     position: relative;
     top: 60px;
     width: 325px;
-    height: 370px;
+    height: 315px;
     margin-left: 2%;
     border: solid 1px red;
     background-color: rgba(249, 5, 62, 0.2);
@@ -89,40 +207,5 @@
 .inverse-triangle {
     position: relative;
     z-index: -1
-}
+} */
 
-.form-headers {
-    font-size: 14px;
-    font-family: 'Audiowide', cursive;
-}
-
-.companyform {
-    padding: 10px
-}
-
-#name,
-#email,
-#telephone,
-#website,
-#jobTitle {
-    width: 160px;
-    height: 20px;
-    margin-left: 10px;
-    border-color: black;
-    color: black
-}
-
-.first-form-section {
-    border: solid 1px rgb(97, 100, 98);
-    padding: 5px;
-}
-
-.second-form-section {
-    margin-top: 5px;
-    border: solid 1px rgb(97, 100, 98);
-    padding: 5px;
-}
-
-#select {
-    display: show !important
-}

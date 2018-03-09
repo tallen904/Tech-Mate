@@ -9,7 +9,7 @@ $(document).ready(function () {
     },1000);
 
 
-    $(document).on('click', '.post-btn', function(){
+    $(document).on('click', '.employer-btn', function(){
        //Link to employer page (employer.html)
     })
 
