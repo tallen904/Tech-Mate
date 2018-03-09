@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     githubUrl: { type: DataTypes.STRING, validate: { isUrl: true } },
-    phoneNumber: { type: DataTypes.STRING, notNull: true }
+    phoneNumber: { type: DataTypes.STRING }
   }, {
     timestamps: false
   });
