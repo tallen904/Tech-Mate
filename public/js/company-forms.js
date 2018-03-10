@@ -159,7 +159,7 @@ $(document).ready(function() {
   }
 
   function submitJob(job) {
-    $.post("/api/jobs/", job, function(result) {
+    $.post("/api/jobbyskills/", job, function(result) {
       console.log("Successfully created new job");
       console.log(result);
       window.location.href = `/match/${result.id}`;
