@@ -11,6 +11,7 @@ router.get("/api/employees", (req, res) => {
 
 router.get('/api/employees/:id', (req, res) => {
   db.Employee.findOne({
+    include: [db.EmployeeSkills],
     where: {
       id: req.params.id
     }

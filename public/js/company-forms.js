@@ -34,7 +34,7 @@ $(document).ready(function() {
     companyId = url.split("=")[1];
     getJobsbyCompany(companyId);
   }
-  $(".companyform").on("submit", handleCompanySubmit);
+  $("#companyform").on("submit", handleCompanySubmit);
   $(".jobform").on("submit", handleJobSubmit);
 
   //alert(formclicked);
