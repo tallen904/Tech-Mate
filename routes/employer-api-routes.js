@@ -76,27 +76,27 @@ router.get("/api/jobsbycompany/:id", function(req, res) {
     });
 });
 
-// //get job skills by job id
-// router.get("/api/jobskills/:jobid", function(req, res) {
-//   db.JobSkills
-//     .findAll({
-//       where: {
-//         id: req.params.jobid
-//       },
-//       include: [db.Jobs]
-//     })
-//     .then(function(dbJobskills) {
-//       res.json(dbJobskills);
-//     });
-// });
+//get job skills by job id
+router.get("/api/jobskills/:jobid", function(req, res) {
+  db.JobSkills
+    .findAll({
+      where: {
+        id: req.params.jobid
+      },
+      include: [db.Jobs]
+    })
+    .then(function(dbJobskills) {
+      res.json(dbJobskills);
+    });
+});
 
-// //create Job and Skills
-// router.post("/api/jobbyskills/", function(req, res)
-// {
-//  db.Jobs.create(req.body, {include : [db.JobSkills]}).then(function(dbjobinfo){
-//    res.json(dbjobinfo);
-//  }) 
-// });
+//create Job and Skills
+router.post("/api/jobbyskills/", function(req, res)
+{
+ db.Jobs.create(req.body, {include : [db.JobSkills]}).then(function(dbjobinfo){
+   res.json(dbjobinfo);
+ }) 
+});
 
 
 //create company
@@ -106,14 +106,14 @@ router.post("/api/company", function(req, res) {
   });
 });
 
-//create skills for job
-// router.post("/api/jobskills", function(req, res) {
-//   db.JobSkills.create(req.body, {
-//     include: [db.JobSkills]
-//   }).then(function(dbSkiils) {
-//     res.json(dbSkiils);
-//   });
-// });
+create skills for job
+router.post("/api/jobskills", function(req, res) {
+  db.JobSkills.create(req.body, {
+    include: [db.JobSkills]
+  }).then(function(dbSkiils) {
+    res.json(dbSkiils);
+  });
+});
 
 // create jobs
 router.post("/api/jobs", function(req, res) {
