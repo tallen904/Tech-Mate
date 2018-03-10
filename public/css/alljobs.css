@@ -102,3 +102,31 @@
         font-size: 18px
     }
 }
+
+@media only screen and (min-width: 1920px) {
+    .title-text {
+        font-size: 150px
+    }
+    .slogan-holder {
+        width: 70%;
+        font-size: 45px;
+    }
+    .logo-div {
+        margin: 10px;
+        width: 200px;
+        height: 200px
+    }
+    .navigation {
+        height: 90px
+    }
+    .tech {
+        margin-left: 5%
+    }
+    .company-txt {
+        font-size: 300%;
+        width: 27%
+    }
+
+   
+   
+}

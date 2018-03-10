@@ -103,3 +103,53 @@
         font-size: 18px
     }
 }
+
+
+@media only screen and (min-width: 1920px) {
+    .title-text {
+        font-size: 150px
+    }
+    .slogan-holder {
+        width: 70%;
+        font-size: 45px;
+    }
+    .logo-div {
+        margin: 10px;
+        width: 200px;
+        height: 200px
+    }
+    .navigation {
+        height: 90px
+    }
+    .tech {
+        margin-left: 5%
+    }
+    .company-txt {
+        font-size: 300%;
+        width: 55%;
+    }
+    .all-content {
+        height: 135vh
+    }
+    .form-div {
+        font-size: 250%;
+        width: 60%;
+    }
+    #name,
+    #email,
+    #telephone,
+    #website {
+        width: 70%;
+        font-size: 85%;
+        height: 90px;
+        padding: 10px
+    }
+
+    .btn {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        width: 20%;
+        height: 80px;
+        font-size: 85%;
+    }
+}
