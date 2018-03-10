@@ -1,229 +1,118 @@
-.all-content {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 160vh;
-    background-size: cover;
-    background-image: url("../assets/images/large-background.jpg");
+@media only screen and (min-width: 768px) {
+    .all-content {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 160vh;
+        background-size: cover;
+        background-image: url("../assets/images/large-background.jpg");
+    }
+    .navigation {
+        z-index: -1;
+        position: relative;
+        margin-top: 35px;
+        width: 100%;
+        background-color: rgba(128, 155, 176, 0.5);
+        border: solid 2px rgb(114, 43, 3);
+        height: 50px;
+        padding-right: 10px
+    }
+    .logo-div {
+        margin-left: 10px;
+        margin-top: 10px;
+        z-index: 1;
+        opacity: 0.9;
+        position: absolute;
+        background-color: black;
+        width: 130px;
+        height: 130px;
+        border: solid 4px rgb(128, 155, 176)
+    }
+    .bar-icon {
+        position: sticky;
+        margin-top: 5px;
+        border: solid 3px rgb(114, 43, 3);
+        width: 45px;
+        height: 35px;
+        left: 1200px;
+        border-radius: 5px
+    }
+    .title-text {
+        position: relative;
+        font-family: 'Marcellus SC', serif;
+        font-weight: bold;
+        font-size: 70px;
+        margin-left: 160px;
+        margin-bottom: 1%
+    }
+    .tech {
+        color: rgb(114, 43, 3);
+        text-shadow: 3px 3px 3px black
+    }
+    .mate {
+        color: rgb(207, 164, 81);
+    }
+    .logo {
+        width: 100%
+    }
+    .logo-div {
+        box-shadow: 9px 9px 5px -2px rgb(114, 43, 3);
+    }
+    #name,
+    #email,
+    #phone,
+    #url,
+    #summary {
+        width: 500px;
+        height: 20px;
+        margin-left: 10px;
+        border-color: black;
+        color: black
+    }
+    #employeeForm {
+        margin: 10px;
+        padding: 20px;
+        text-align: left
+    }
+    .form-div {
+        margin-top: 20px;
+        width: 575px;
+        margin-left: 20px;
+        background-color: rgba(255, 243, 226, 0.7);
+        color: rgb(114, 43, 3);
+        font-family: 'Pridi', serif;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0px -1px 49px 10px rgba(0, 0, 0, 0.75);
+    }
+    #summary {
+        margin-left: 0px;
+        height: 100px;
+        width: px;
+    }
+    #name,
+    #email,
+    #phone,
+    #url {
+        margin-left: 0px
+    }
+    .input-field {
+        width: 200px;
+    }
+    .employee-txt {
+        color: rgb(114, 43, 3);
+        font-weight: bold;
+        font-size: 25px;
+        margin-left: 2%;
+        font-family: 'Marcellus SC', serif;
+        background-color: rgba(255, 243, 226, 0.4);
+        width: 45%;
+        border-radius: 30px
+    }
+    .submit {
+        margin-left: 35%;
+        background-color: rgb(207, 164, 81);
+        font-size: 18px
+    }
 }
 
-.navigation {
-    z-index: -1;
-    position: relative;
-    margin-top: 35px;
-    width: 100%;
-    background-color: rgba(128, 155, 176, 0.5);
-    border: solid 2px rgb(114, 43, 3);
-    height: 50px;
-    padding-right: 10px
-}
-
-.logo-div {
-    margin-left: 10px;
-    margin-top: 10px;
-    z-index: 1;
-    opacity: 0.9;
-    position: absolute;
-    background-color: black;
-    width: 130px;
-    height: 130px;
-    border: solid 4px rgb(128, 155, 176)
-}
-
-
-
-.bar-icon {
-    position: sticky;
-    margin-top: 5px;
-    border: solid 3px rgb(114, 43, 3);
-    width: 45px;
-    height: 35px;
-    left: 1200px;
-    border-radius: 5px
-}
-
-.title-text {
-    position: relative;
-    font-family: 'Marcellus SC', serif;
-    font-weight: bold;
-    font-size: 70px;
-    margin-left: 160px;
-    margin-bottom: 1%
-}
-
-.tech {
-    color: rgb(114, 43, 3);
-    text-shadow: 3px 3px 3px black
-}
-
-.mate {
-    color: rgb(207, 164, 81);
-}
-
-.logo {
-    width: 100%
-}
-
-.logo-div {
-    box-shadow: 9px 9px 5px -2px rgb(114, 43, 3);
-}
-
-#name,
-#email,
-#phone,
-#url,
-#summary {
-    width: 500px;
-    height: 20px;
-    margin-left: 10px;
-    border-color: black;
-    color: black
-}
-
-#employeeForm {
-    margin: 10px;
-    padding: 20px;
-    text-align: left
-}
-
-.form-div {
-    margin-top: 20px;
-    width: 575px;
-    margin-left: 20px;
-    background-color: rgba(255, 243, 226, 0.7);
-    color: rgb(114, 43, 3);
-    font-family: 'Pridi',
-    serif;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0px -1px 49px 10px rgba(0, 0, 0, 0.75);
-}
-
-#summary {
-    margin-left: 0px;
-    height: 100px;
-    width: px;
-}
-
-#name,
-#email,
-#phone,
-#url {
-    margin-left: 0px
-}
-
-.input-field {
-    width: 200px;
-   
-}
-
-.employee-txt {
-    color : rgb(114, 43, 3);
-    font-weight: bold;
-    font-size: 25px;
-    margin-left: 2%;
-    font-family: 'Marcellus SC',
-    serif;
-    background-color: rgba(255, 243, 226, 0.4);
-    width: 45%;
-    border-radius: 30px
-}
-
-   .submit {
-       margin-left: 35%;
-       background-color: rgb(207, 164, 81);
-       font-size: 18px
-   }
-
-/* .navbar-header {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(241, 241, 239);
-    box-shadow: 0 8px 6px -6px black;
-}
-
-.tech-2 {
-    margin-left: 10px;
-    color: red;
-    font-family: 'Audiowide', cursive;
-    font-size: 20px
-}
-
-.mate-2 {
-    color: black;
-    font-family: 'Audiowide', cursive;
-    font-size: 20px
-}
-
-.form-div {
-    background-color: rgb(241, 241, 239);
-    margin-top: 4%;
-    height: 520px;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    border: solid 1px black;
-    box-shadow: 6px 6px 6px -6px black;
-}
-
-.triangle {
-    width: 340px;
-    position: absolute
-}
-
-.header-txt {
-    margin-left: 57px;
-    color: black;
-    font-family: 'Audiowide', cursive;
-    font-size: 16px;
-}
-
-.company-header {
-    position: relative;
-    top: 75px;
-    font-size: 16px;
-    font-family: 'Audiowide', cursive;
-    text-align: center;
-    padding: 5px;
-    border: solid 1px black;
-    width: 300px;
-    margin-left: 20px
-}
-
-.form-holder {
-    position: relative;
-    top: 60px;
-    width: 325px;
-    height: 315px;
-    margin-left: 2%;
-    border: solid 1px red;
-    background-color: rgba(249, 5, 62, 0.2);
-    box-shadow: 6px 6px 6px -6px black;
-}
-
-.footer {
-    margin-top: 15px;
-    width: 100%;
-    height: 35px;
-    background-color: rgb(241, 241, 239);
-    box-shadow: -6px 6px 6px 6px black;
-    text-align: center;
-    padding: 8px;
-    color: red
-}
-
-.submit-btn {
-    position: relative;
-    font-size: 16px;
-    font-family: 'Audiowide', cursive;
-    background-color: rgb(97, 100, 98);
-    color: white;
-    left: 109px;
-    top: 10px;
-    width: 125px;
-    padding: 5px;
-}
-
-.inverse-triangle {
-    position: relative;
-    z-index: -1
-} */
