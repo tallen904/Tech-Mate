@@ -1,14 +1,7 @@
-$(document).ready(function() {
-
-  // $(document).on('click', '.fill-skills', function () {
-  //   $('.first-form-section').hide();
-  //   $('.second-form-section').hide();
-  //   $('.fill-skills').hide()
-  // })
-
-  $("select").material_select();
-
-  //js selectors
+$(document).ready(function(){
+    $("select").material_select();
+})
+    //js selectors
   var companyList = $("tbody");
   var companyContainer = $(".company-container");
   var jobContainer = $(".jobs-container");
@@ -30,12 +23,13 @@ $(document).ready(function() {
 
   var url = window.location.href;
   var companyId;
-  if (url.indexOf("company_id=") !== -1) {
+  if (url.indexOf("company=") !== -1) {
     companyId = url.split("=")[1];
-    getJobsbyCompany(companyId);
+    // getJobsbyCompany(companyId);
   }
+  var companyIdUpdate = {CompanyId: companyId}
   $("#companyform").on("submit", handleCompanySubmit);
-  $(".jobform").on("submit", handleJobSubmit);
+  $(".jobsubmit").on("click", handleJobSubmit);
 
   //alert(formclicked);
   // A function for handling what happens when the form to create a new company is submitted
@@ -169,6 +163,14 @@ $(document).ready(function() {
     });
   }
 
+//   function updateJobWithCompanyId(jobId, companyId) {
+//       $.put('/api/jobs/${jobId}', companyId, function(){
+//         console.log('Yep')
+//       }).then(){
+//           console.log('Added Company Id to job listing.')
+//       }
+//   }
+
   function renderJobs(result) {
     //console.log(result)
     result.forEach(function(item) {
@@ -194,4 +196,3 @@ $(document).ready(function() {
       jobContainer.append(divInner);
     }, this);
   }
-});

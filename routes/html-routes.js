@@ -14,7 +14,7 @@ router.get('/employer', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/employer.html'))
 })
 
-router.get('/postjob/:id', (req, res) => {
+router.get('/postjob/company=:id/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/jobposting.html'))
 })
 
@@ -22,7 +22,7 @@ router.get('/jobs', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/alljobs.html'))
 })
 
-router.get('/match/:id', (req, res) => {
+router.get('/match/:jobid?', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/match.html'))
 })
 

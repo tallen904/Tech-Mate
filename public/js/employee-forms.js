@@ -29,7 +29,7 @@ function postHandler(event){
         email: email.val().trim(),
         summary: summary.val().trim(),
         githubUrl: githubUrl.val().trim(),
-        phone: parseInt(phone.val().trim()),
+        phoneNumber: parseInt(phone.val().trim()),
         EmployeeSkill: {
             html: parseInt(html.val()),
             css: parseInt(css.val()),
