@@ -1,16 +1,3 @@
-@media only screen and (min-width: 1920px) {
-
-    .title-text {
-        font-size: 150px
-    }
-
-    .slogan-holder {
-        width: 70%;
-        font-size: 45px;
-    }
-}
-
-
 @media only screen and (min-width: 768px) {
     .all-content {
         position: absolute;
@@ -31,8 +18,7 @@
         padding-right: 10px
     }
     .logo-div {
-        margin-left: 10%;
-        margin-top: 10%;
+        margin: 15px;
         z-index: 1;
         opacity: 0.9;
         position: absolute;
@@ -44,8 +30,6 @@
     .btn-default {
         margin-left: 1100px;
     }
-
-  
     #bar-icon {
         position: sticky;
         margin-top: 5px;
@@ -55,9 +39,6 @@
         left: 1200px;
         border-radius: 5px
     }
-
-   
-
     .title-text {
         position: relative;
         top: 100px;
@@ -112,7 +93,7 @@
         margin-top: 35px;
         z-index: -1;
         position: relative;
-        background-color: rgb(128, 155, 176);
+        background-color: rgba(128, 155, 176, 0.6);
         width: 300px;
         height: 60px;
         border: solid 2px rgb(114, 43, 3);
@@ -123,7 +104,7 @@
         margin-top: 35px;
         z-index: -1;
         position: relative;
-        background-color: rgba(128, 155, 176);
+        background-color: rgba(128, 155, 176, 0.6);
         width: 300px;
         height: 60px;
         border: solid 2px rgb(114, 43, 3);
@@ -154,157 +135,54 @@
         border-radius: 10px;
         border: solid 2px rgb(207, 164, 81);
     }
-
     .logo {
-       width: 100%
+        width: 100%
     }
-
     .logo-div {
         box-shadow: 9px 9px 5px -2px rgb(114, 43, 3);
     }
 }
 
-@media only screen and (min-width: 360px) {
-    .all-content {
-        position: absolute;
-        z-index: 1;
-        background-size: cover;
-        background-image: url("../assets/images/large-background.jpg");
+@media only screen and (min-width: 1920px) {
+    .title-text {
+        font-size: 150px
+    }
+    .slogan-holder {
+        width: 70%;
+        font-size: 45px;
+    }
+    .logo-div {
+        margin: 10px;
+        width: 200px;
+        height: 200px
     }
     .navigation {
-        z-index: -1;
-        position: relative;
-        margin-top: 35px;
-        width: 100%;
-        background-color: rgba(128, 155, 176, 0.5);
-        border: solid 2px rgb(114, 43, 3);
-        height: 50px;
-        padding-right: 10px
+        height: 90px
     }
-    .logo-div {
-        margin-left: 10px;
-        margin-top: 10px;
-        z-index: 1;
-        opacity: 0.9;
-        position: absolute;
-        background-color: black;
-        width: 130px;
-        height: 130px;
-        border: solid 4px rgb(128, 155, 176)
-    }
-    .btn-default {
-        margin-left: 1100px;
-    }
-    .bar-icon {
-        position: sticky;
-        margin-top: 5px;
-        border: solid 3px rgb(114, 43, 3);
-        width: 45px;
-        height: 35px;
-        left: 1200px;
-        border-radius: 5px
-    }
-    .title-text {
-        position: relative;
-        top: 100px;
-        font-family: 'Marcellus SC', serif;
-        font-weight: bold;
-        font-size: 70px;
-        margin-left: 30px
-    }
-    .tech {
-        color: rgb(114, 43, 3);
-        text-shadow: 3px 3px 3px black
-    }
-    .mate {
-        color: rgb(207, 164, 81);
-    }
-    .slogan-holder {
-        background: linear-gradient(to left, rgba(244, 228, 203, 0), white);
-        width: 590px;
-        position: relative;
-        border-radius: 40%;
-        margin-top: 100px;
-        margin-left: 55px;
-        font-family: 'Pridi', serif;
-        font-weight: bold;
-        font-size: 20px;
-        font-style: italic;
-        color: rgb(114, 43, 3);
+    .company-strip,
+    .employee-strip {
+        height: 100px;
+        width: 550px;
     }
     .chess-piece-1 {
-        z-index: 1;
-        position: absolute;
-        border: solid 1px rgb(114, 43, 3);
-        box-shadow: 10px 12px 35px -1px rgb(114, 43, 3);
-        margin-top: 10px;
-        margin-left: 70px;
-        width: 70px;
-        height: 140px
+        height: 200px;
+        width: 100px;
     }
     .chess-piece-2 {
-        z-index: 1;
-        position: absolute;
-        border: solid 1px rgb(114, 43, 3);
-        box-shadow: -20px 20px 35px -1px rgb(114, 43, 3);
-        margin-top: 10px;
-        margin-left: 360px;
-        width: 70px;
-        height: 140px
-    }
-    .company-strip {
-        border-radius: 10px;
-        margin-left: 50px;
-        margin-top: 35px;
-        z-index: -1;
-        position: relative;
-        background-color: rgba(128, 155, 176, 0.3);
-        width: 300px;
-        height: 60px;
-        border: solid 2px rgb(114, 43, 3);
-    }
-    .employee-strip {
-        border-radius: 10px;
-        margin-left: 155px;
-        margin-top: 35px;
-        z-index: -1;
-        position: relative;
-        background-color: rgba(128, 155, 176, 0.3);
-        width: 300px;
-        height: 60px;
-        border: solid 2px rgb(114, 43, 3);
+        height: 200px;
+        width: 100px;
+        margin-left: 30%
     }
     #company-btn {
-        margin-left: 110px;
-        margin-top: 8px;
-        font-size: 17px;
-        font-family: 'Pridi', serif;
-        font-weight: bold;
-        color: white;
-        width: 175px;
-        height: 35px;
-        background-color: rgb(114, 43, 3);
-        border-radius: 10px;
-        border: solid 2px rgb(207, 164, 81);
+        width: 70%;
+        margin-left: 25%;
+        height: 80%;
+        font-size: 300%;
     }
     #employee-btn {
-        margin-left: 10px;
-        margin-top: 8px;
-        font-size: 17px;
-        font-family: 'Pridi', serif;
-        font-weight: bold;
-        color: white;
-        width: 175px;
-        height: 35px;
-        background-color: rgb(114, 43, 3);
-        border-radius: 10px;
-        border: solid 2px rgb(207, 164, 81);
-    }
-    .logo {
-        width: 100%;
-    }
-    .logo-div {
-        box-shadow: 9px 9px 5px -2px rgb(114, 43, 3);
+        width: 80%;
+        margin-left: 2%;
+        height: 80%;
+        font-size: 235%;
     }
 }
-

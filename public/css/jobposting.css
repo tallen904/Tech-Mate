@@ -104,3 +104,47 @@
         border-radius: 30px
     }
 }
+
+@media only screen and (min-width: 1920px) {
+    .title-text {
+        font-size: 150px
+    }
+    .slogan-holder {
+        width: 70%;
+        font-size: 45px;
+    }
+    .logo-div {
+        margin: 10px;
+        width: 200px;
+        height: 200px
+    }
+    .navigation {
+        height: 90px
+    }
+    .tech {
+        margin-left: 5%
+    }
+    .company-txt {
+        font-size: 300%;
+        width: 30%
+    }
+    .form-div {
+        font-size: 250%;
+        width: 60%;
+    }
+    #jobTitle {
+        width: 70%;
+        font-size: 85%;
+        height: 70%
+    }
+    #jobDescription {
+        width: 90%;
+        height: 200px;
+    }
+
+     .btn {
+         width: 20%;
+         height: 80px;
+         font-size: 85%;
+     }
+}

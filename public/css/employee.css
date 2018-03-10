@@ -3,7 +3,7 @@
         position: absolute;
         z-index: 1;
         width: 100%;
-        height: 160vh;
+        height: 165vh;
         background-size: cover;
         background-image: url("../assets/images/large-background.jpg");
     }
@@ -88,7 +88,6 @@
     #summary {
         margin-left: 0px;
         height: 100px;
-        width: px;
     }
     #name,
     #email,
@@ -116,3 +115,59 @@
     }
 }
 
+@media only screen and (min-width: 1920px) {
+    .title-text {
+        font-size: 150px
+    }
+    .slogan-holder {
+        width: 70%;
+        font-size: 45px;
+    }
+    .logo-div {
+        margin: 10px;
+        width: 200px;
+        height: 200px
+    }
+    .navigation {
+        height: 90px
+    }
+    .tech {
+        margin-left: 5%
+    }
+    .employee-txt {
+        font-size: 300%;
+        width: 55%;
+    }
+    .all-content {
+        height: 135vh
+    }
+    .form-div {
+        font-size: 250%;
+        width: 60%;
+    }
+    #name,
+    #email,
+    #phone,
+    #url {
+        width: 70%;
+        font-size: 85%;
+        height: 70%
+    }
+    #summary {
+        height: 200px;
+        width: 90%
+    }
+    .input-field {
+        width: 500px;
+    }
+
+    .select-dropdown {
+        font-size: 40px
+    }
+
+    .btn {
+        width: 20%;
+        height: 80px;
+        font-size: 85%;
+    }
+}
