@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--My CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/match.css" />
+    <link rel="stylesheet" href="../css/dragula.css">
     <!--Jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -37,13 +38,48 @@
         </div>
 
         <div class="james-content">
+            <div id="match-container" class="match-container match-container-grid">
+                <div class="match-results
+                            match-container-item
+                            match-container-item-grid" id="match-results">
+                    <div class="match-subcontainer-title-large"></div>
+                    <div class="match-subcontainer-description-large"></div>
+                    <div class="match-subcontainer-result-large"></div>
 
+                </div>
+
+                <div class="match-options-email
+                            match-container-item
+                            match-container-item-grid" id="match-email">
+
+
+                </div>
+
+                <div class="match-options-hold
+                            match-container-item
+                            match-container-item-grid" id="match-hold">
+
+                </div>
+
+                <div class="match-options-trash
+                            match-container-item
+                            match-container-item-grid" id="match-trash">
+
+                </div>
+            </div>
         </div>
 
 
-            </form>
-        </div>
+        </form>
+    </div>
 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="../js/match.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.0/dragula.min.js'></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
