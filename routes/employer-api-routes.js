@@ -108,9 +108,7 @@ router.post("/api/company", function(req, res) {
 
 create skills for job
 router.post("/api/jobskills", function(req, res) {
-  db.JobSkills.create(req.body, {
-    include: [db.JobSkills]
-  }).then(function(dbSkiils) {
+  db.JobSkills.create(req.body).then(function(dbSkiils) {
     res.json(dbSkiils);
   });
 });
