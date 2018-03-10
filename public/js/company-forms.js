@@ -7,11 +7,12 @@ $(document).ready(function() {
   })
 
   $("select").material_select();
-
+  
   //js selectors
   var companyList = $("tbody");
   var companyContainer = $(".company-container");
   var jobContainer = $(".jobs-container");
+  companyContainer.hide();
 
   const name = $("#name");
   const email = $("#email");
@@ -129,6 +130,7 @@ $(document).ready(function() {
     if (rows.length) {
       console.log(rows);
       companyList.prepend(rows);
+      companyContainer.show();
     } else {
       renderEmpty();
     }
@@ -144,7 +146,7 @@ $(document).ready(function() {
     //   nameInput.val("");
   }
 
-  // Submits a new post and brings user to blog page upon completion
+  // Submits a new company
   function submitCompany(company) {
     $.post("/api/company", company, function(result) {
       //console.log(company);
@@ -157,6 +159,8 @@ $(document).ready(function() {
   function submitJob(job) {
     $.post("/api/jobbyskills/", job, function(result) {
       console.log("Successfully created new job");
+      console.log(result);
+      window.location.href = `/match/${result.id}`;
     });
   }
 
@@ -172,19 +176,20 @@ $(document).ready(function() {
     result.forEach(function(item) {
       //console(item);
       var divInner = $(`
+              <div class="form-div">
               <div class="">
                 <div>Job Title: ${item.jobTitle}</div>
               </div>
-              <div class="card-content">
+              <div class="">
                 <p>Job Description: ${item.jobDescription}</p>
               </div>
               <div>Skills Required</div>
-              <div class="">
-                <div class ="">Html: ${item.JobSkill.html}</p>
-                <div class ="">CSS:</div> ${item.JobSkill.css}
-                <div class ="">JavaScipt: </div> ${item.JobSkill.javascript}
-                <div class ="">NodeJs: </div>${item.JobSkill.nodejs}
-                <div class ="">ReactJs: </div>${item.JobSkill.reactjs}
+              <div class="row">
+                <div class ="col s2">Html: ${item.JobSkill.html}</div>
+                <div class ="col s2">CSS: ${item.JobSkill.css}</div>
+                <div class ="col s3">JavaScript: ${item.JobSkill.javascript}</div>
+                <div class ="col s3">NodeJs: ${item.JobSkill.nodejs}</div>
+                <div class ="col s3">ReactJs: ${item.JobSkill.reactjs}</div>
               </div>
           </div>
           `);
