@@ -22,8 +22,8 @@ router.get('/jobs', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/alljobs.html'))
 })
 
-router.get('/match/:id', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/views/match.html'))
+router.get('/match/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/views/match2.html'))
 })
 
 module.exports = router;

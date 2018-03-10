@@ -51,7 +51,7 @@ function submitEmployee(employee){
 function getEmployee(id){
     $.get(`/api/employees/${id}`, function(data){
         console.log(data)
-        changePage(`/api/employees/${id}`).then(function(){
+        changePage(`/match`).then(function(){
             $(document).ready(function(){
                 displayEmployee(data)
             })

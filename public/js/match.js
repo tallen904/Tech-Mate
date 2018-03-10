@@ -64,12 +64,12 @@ function getEmployees(){
     }).then(function(){
         data = {
             employer: '',
-            // candidates: employeeData,
+            candidates: employeeData,
             post: () => {
                 // data.candidates.forEach(candidate => card.create(candidate));
                 employeeData.forEach(employee => card.create(employee))
             },
-          randomImages: ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.png','13.png']
+          randomImages: ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.png','13.png'],
 
           getRandomImg: () => {
             const nImg = data.randomImages.length;
@@ -78,7 +78,7 @@ function getEmployees(){
           getCandidateByID: (divID) => {
             const id = parseInt(divID);
             const candidate = data.candidates.filter((candidate) => {
-              return candidate.profile.id === id;
+              return candidate.id === id;
             });
             return candidate[0];
           },
@@ -154,10 +154,7 @@ function getEmployees(){
         }
         data.post()
     })
-    
 }
-
-let data = {}
 
  //var data
 
@@ -178,7 +175,7 @@ function Candidate(profile,skills) {
 	}; //this.updateState = (divID) => {
 
 	this.removeCard = () => {
-		$(`#${this.profile.id}`).remove();
+		$(`#${this.id}`).remove();
 	}
 
 	this.createCard = (divID) => {
@@ -192,24 +189,24 @@ function Candidate(profile,skills) {
 	this.createLargeCard = (divID) => {
 		let card = $('<div>')
 					.addClass('card')
-					.attr('id',this.profile.id)
+					.attr('id',this.id)
 					.appendTo($(`#${divID}`));
 
 		$('<div>').addClass('card-image waves-effect')
 				  .addClass('waves-block waves-light')
-				  .append($(`<img class="activator" src=${this.profile.image}>`))
+				  .append($(`<img class="activator" src=${this.image}>`))
 				  .appendTo(card);
 
 		$('<div>').addClass('card-content')
-				  .append($(`<p "font-size: 15px;">${this.profile.name} - <b>match: ${this.score}</b></p>`))
-				  .append($(`<p style="font-size: 13px;">${this.profile.phone}</p>`))
-				  .append($(`<p style="font-size: 13px;">${this.profile.email}</p>`))
-				  .append($(`<p><a href="#">${this.profile.github}</a></p>`))
+				  .append($(`<p "font-size: 15px;">${this.name} - <b>match: ${this.score}</b></p>`))
+				  .append($(`<p style="font-size: 13px;">${this.phone}</p>`))
+				  .append($(`<p style="font-size: 13px;">${this.email}</p>`))
+				  .append($(`<p><a href="#">${this.githubUrl}</a></p>`))
 				  .appendTo(card);
 
 		$('<div>').addClass('card-reveal')
 				  .append($('<span class="card-title grey-text text-darken-4">Skills</span>'))
-				  .append($(`<canvas width=180px height=300px id="canvas-${this.profile.id}">`))
+				  .append($(`<canvas width=180px height=300px id="canvas-${this.id}">`))
 				  .appendTo(card);
 
 		chart.post(this)
@@ -218,11 +215,11 @@ function Candidate(profile,skills) {
 	this.createSmallCard = (divID) => {
 		let card = $('<div>')
 					.addClass('card horizontal')
-					.attr('id',this.profile.id)
+					.attr('id',this.id)
 					.appendTo($(`#${divID}`));
 
 		$('<div>').addClass('card-image')
-				  .append($(`<img class="activator" src=${this.profile.image}>`))
+				  .append($(`<img class="activator" src=${this.image}>`))
 				  .appendTo(card);
 
 		let cardContent = $('<div>')
@@ -232,7 +229,7 @@ function Candidate(profile,skills) {
 		
 
 		$('<div>').addClass('card-content')
-				  .append($(`<p>${this.profile.name}</p>`))
+				  .append($(`<p>${this.name}</p>`))
 				  .append($(`<p style="font-size: 12px;"><b>Score: ${this.score}</b></p>`))
 				  .appendTo(cardContent);
 	};
@@ -328,8 +325,8 @@ var display = {
 		});
 
 		candidatesMatch.forEach(candidate => {
-			$(`#${candidate.profile.id}`).removeClass(cssClass);
-			console.log(candidate.profile.id)
+			$(`#${candidate.id}`).removeClass(cssClass);
+			console.log(candidate.id)
 		});
 	},
 
@@ -342,7 +339,7 @@ var display = {
 
 
 				candidatesMatch.forEach(candidate => {
-					$(`#${candidate.profile.id}`).addClass('card-hover');
+					$(`#${candidate.id}`).addClass('card-hover');
 				});
 
 
@@ -371,7 +368,7 @@ var display = {
 
 
 				candidatesMatch.forEach(candidate => {
-					$(`#${candidate.profile.id}`).removeClass('card-hover');
+					$(`#${candidate.id}`).removeClass('card-hover');
 				});
 
 				switch (divID) {
