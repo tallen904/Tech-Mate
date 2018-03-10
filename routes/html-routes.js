@@ -14,7 +14,7 @@ router.get('/employer', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/employer.html'))
 })
 
-router.get('/postjob/:id', (req, res) => {
+router.get('/postjob', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/jobposting.html'))
 })
 
