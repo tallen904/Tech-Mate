@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-  $(document).on("click", ".fill-skills", function() {
-    $(".first-form-section").hide();
-    $(".second-form-section").hide();
-    $(".fill-skills").hide();
-  });
+  $(document).on('click', '.fill-skills', function () {
+    $('.first-form-section').hide();
+    $('.second-form-section').hide();
+    $('.fill-skills').hide()
+  })
 
   $("select").material_select();
 
