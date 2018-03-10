@@ -14,11 +14,7 @@ router.get('/employer', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/employer.html'))
 })
 
-<<<<<<< HEAD
-router.get('/postjob/company=:id/', (req, res) => {
-=======
 router.get('/postjob', (req, res) => {
->>>>>>> 1188e5eb0f0dcaafd644945b17212c97eafcee56
     res.sendFile(path.join(__dirname, '../public/views/jobposting.html'))
 })
 
