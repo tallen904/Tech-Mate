@@ -29,9 +29,9 @@ $(document).ready(function() {
   var nodejs = $("#nodejs");
   var reactjs = $("#reactjs");
 
-  var url = window.location.href;
+  var url = window.location.search;
   var companyId;
-  if (url.indexOf("company_id=") !== -1) {
+  if (url.indexOf("?company_id=") !== -1) {
     companyId = url.split("=")[1];
     getJobsbyCompany(companyId);
   }
