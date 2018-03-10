@@ -153,7 +153,6 @@ $(document).ready(function() {
       //console.log(company);
       console.log("Successfully created new company");
       getCompany(result);
-      window.location.href = `/postjob/company=${result.id}`
       //getJobsbyCompany(result.id);
     });
   }
@@ -162,7 +161,7 @@ $(document).ready(function() {
     $.post("/api/jobbyskills/", job, function(result) {
       console.log("Successfully created new job");
       console.log(result);
-      window.location.href = `/match/${result.id}`;
+      window.location.href = `/match/`;
     });
   }
 
