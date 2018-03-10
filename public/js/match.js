@@ -27,6 +27,7 @@ var chart = {
 
 
 
+
 var card = {
 	create: (candidate) => {
 		let card = $('<div>')
@@ -68,6 +69,23 @@ function getEmployees(){
                 // data.candidates.forEach(candidate => card.create(candidate));
                 employeeData.forEach(employee => card.create(employee))
             },
+          randomImages: ['1.png','2.png','3.png','4.png','5.png','6.png','7.png','8.png','9.png','10.png','11.png','12.png','13.png']
+
+          getRandomImg: () => {
+            const nImg = data.randomImages.length;
+          },
+
+          getCandidateByID: (divID) => {
+            const id = parseInt(divID);
+            const candidate = data.candidates.filter((candidate) => {
+              return candidate.profile.id === id;
+            });
+            return candidate[0];
+          },
+
+          postMatch: () => {
+            data.candidates.forEach(candidate => candidate.updateAfterDrop('match-results'));
+          },
         
             calculateScore: () => {
                 data.candidates.forEach(candidate => {
@@ -147,14 +165,86 @@ function Candidate(profile,skills) {
 	this.score = '';
 	this.profile = profile;
 	this.skills = skills;
+	this.divID = '';
+
+	this.updateAfterDrop = (divID) => {
+		if (divID === this.divID) return;
+
+
+		if (this.divID !== '') this.removeCard();
+
+		this.createCard(divID);
+		this.divID = divID;
+	}; //this.updateState = (divID) => {
+
+	this.removeCard = () => {
+		$(`#${this.profile.id}`).remove();
+	}
+
+	this.createCard = (divID) => {
+		if (divID === 'match-results') {
+			this.createLargeCard(divID);
+		} else {
+			this.createSmallCard(divID);
+		}
+	};
+
+	this.createLargeCard = (divID) => {
+		let card = $('<div>')
+					.addClass('card')
+					.attr('id',this.profile.id)
+					.appendTo($(`#${divID}`));
+
+		$('<div>').addClass('card-image waves-effect')
+				  .addClass('waves-block waves-light')
+				  .append($(`<img class="activator" src=${this.profile.image}>`))
+				  .appendTo(card);
+
+		$('<div>').addClass('card-content')
+				  .append($(`<p "font-size: 15px;">${this.profile.name} - <b>match: ${this.score}</b></p>`))
+				  .append($(`<p style="font-size: 13px;">${this.profile.phone}</p>`))
+				  .append($(`<p style="font-size: 13px;">${this.profile.email}</p>`))
+				  .append($(`<p><a href="#">${this.profile.github}</a></p>`))
+				  .appendTo(card);
+
+		$('<div>').addClass('card-reveal')
+				  .append($('<span class="card-title grey-text text-darken-4">Skills</span>'))
+				  .append($(`<canvas width=180px height=300px id="canvas-${this.profile.id}">`))
+				  .appendTo(card);
+
+		chart.post(this)
+	};
+
+	this.createSmallCard = (divID) => {
+		let card = $('<div>')
+					.addClass('card horizontal')
+					.attr('id',this.profile.id)
+					.appendTo($(`#${divID}`));
+
+		$('<div>').addClass('card-image')
+				  .append($(`<img class="activator" src=${this.profile.image}>`))
+				  .appendTo(card);
+
+		let cardContent = $('<div>')
+					.addClass('card-stacked')
+				  	.appendTo(card);
+
+		
+
+		$('<div>').addClass('card-content')
+				  .append($(`<p>${this.profile.name}</p>`))
+				  .append($(`<p style="font-size: 12px;"><b>Score: ${this.score}</b></p>`))
+				  .appendTo(cardContent);
+	};
 }
 
-function Profile(id,name,summary,github,phone,image) {
+function Profile(id,name,summary,github,phone,email,image) {
 	this.id = id;
 	this.name = name;
 	this.summary = summary;
 	this.github = github;
 	this.phone = phone;
+	this.email = email;
 	this.image = image;
 }
 
@@ -189,11 +279,17 @@ var drag = {
 			}
 		})
 		.on("drop",function(el,target,source,sibling) {
-			elementObj = el;
 			drag.updateTasksAfterDrag(el.id,source.id,target.id);
 		});
-		this.drake.on("drag",function(el,target,source,sibling) {
-			
+
+		this.drake.on("over",function(el,container,source) {
+			const divID = container.id;
+			display.effect.hover.on(divID);
+		})
+
+		this.drake.on("out",function(el,container,source) {
+			const divID = container.id;
+			display.effect.hover.off(divID);
 		})
 	}, //initialize
 
@@ -203,11 +299,12 @@ var drag = {
 
 
 	updateDragContainers: function() {
-		l
+		
 	},
 
-	updateTasksAfterDrag: function(taskHTMLid, sourceID, targetID) {
-		
+	updateTasksAfterDrag: function(candidateHTMLid, sourceID, targetID) {
+		const candidate = data.getCandidateByID(candidateHTMLid);
+		candidate.updateAfterDrop(targetID);
 	},
 
 	
@@ -221,6 +318,81 @@ var drag = {
 
 	}
 }
+
+var display = {
+
+
+	removeCandidateCSSbyDiv: (divID,cssClass) => {
+		const candidatesMatch = data.candidates.filter(candidate => {
+			candidate.divID === divID;
+		});
+
+		candidatesMatch.forEach(candidate => {
+			$(`#${candidate.profile.id}`).removeClass(cssClass);
+			console.log(candidate.profile.id)
+		});
+	},
+
+	effect: {
+		hover: {
+			on: (divID) => {
+				let candidatesMatch = data.candidates.filter(candidate => {
+					return candidate.divID === divID;
+				});
+
+
+				candidatesMatch.forEach(candidate => {
+					$(`#${candidate.profile.id}`).addClass('card-hover');
+				});
+
+
+				$(`#${divID}`).addClass('match-container-hover');
+				switch (divID) {
+					case 'match-email':
+						$(`#${divID}`).addClass('email-hover');
+						break;
+					case 'match-hold':
+						$(`#${divID}`).addClass('save-hover');
+						break;
+					case 'match-trash':
+						$(`#${divID}`).addClass('trash-hover');
+						break;
+					case 'match-results':
+						$(`#${divID}`).addClass('match-hover');
+						break;
+				} //switch (divID) {
+
+				
+			},
+			off: (divID) => {
+				let candidatesMatch = data.candidates.filter(candidate => {
+					return candidate.divID === divID;
+				});
+
+
+				candidatesMatch.forEach(candidate => {
+					$(`#${candidate.profile.id}`).removeClass('card-hover');
+				});
+
+				switch (divID) {
+					case 'match-email':
+						$(`#${divID}`).removeClass('email-hover');
+						break;
+					case 'match-hold':
+						$(`#${divID}`).removeClass('save-hover');
+						break;
+					case 'match-trash':
+						$(`#${divID}`).removeClass('trash-hover');
+						break;
+					case 'match-results':
+						$(`#${divID}`).removeClass('match-hover');
+						break;
+				} //switch (divID) {
+				$(`#${divID}`).removeClass('match-container-hover');
+			}
+		}, //hover
+	}, //effect
+} //display
 
 $(document).ready(() => {
     // data.initializeDummy();
