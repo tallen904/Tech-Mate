@@ -1,63 +1,244 @@
 @media only screen and (min-width: 768px) {
-    .all-content {
-        position: absolute;
-        z-index: 1;
-        width: 100%;
-        height: 130vh;
-        background-size: cover;
-        background-image: url("../assets/images/large-background.jpg");
-    }
-    .navigation {
-        z-index: -1;
-        position: relative;
-        margin-top: 35px;
-        width: 100%;
-        background-color: rgba(128, 155, 176, 0.5);
-        border: solid 2px rgb(114, 43, 3);
-        height: 50px;
-        padding-right: 10px
-    }
-    .logo-div {
-        margin-left: 10px;
-        margin-top: 10px;
-        z-index: 1;
-        opacity: 0.9;
-        position: absolute;
-        background-color: black;
-        width: 130px;
-        height: 130px;
-        border: solid 4px rgb(128, 155, 176)
-    }
-    .btn-default {
-        margin-left: 1100px;
-    }
-    .bar-icon {
-        position: sticky;
-        margin-top: 5px;
-        border: solid 3px rgb(114, 43, 3);
-        width: 45px;
-        height: 35px;
-        left: 1200px;
-        border-radius: 5px
-    }
-    .title-text {
-        position: relative;
-        font-family: 'Marcellus SC', serif;
-        font-weight: bold;
-        font-size: 70px;
-        margin-left: 160px
-    }
-    .tech {
-        color: rgb(114, 43, 3);
-        text-shadow: 3px 3px 3px black
-    }
-    .mate {
-        color: rgb(207, 164, 81);
-    }
-    .logo {
-        width: 100%
-    }
-    .logo-div {
-        box-shadow: 9px 9px 5px -2px rgb(114, 43, 3);
-    }
+  .all-content {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 130vh;
+    background-size: cover;
+    background-image: url("../assets/images/large-background.jpg");
+  }
+  .navigation {
+    z-index: -1;
+    position: relative;
+    margin-top: 35px;
+    width: 100%;
+    background-color: rgba(128, 155, 176, 0.5);
+    border: solid 2px rgb(114, 43, 3);
+    height: 50px;
+    padding-right: 10px;
+  }
+  .logo-div {
+    margin-left: 10px;
+    margin-top: 10px;
+    z-index: 1;
+    opacity: 0.9;
+    position: absolute;
+    background-color: black;
+    width: 130px;
+    height: 130px;
+    border: solid 4px rgb(128, 155, 176);
+  }
+  .btn-default {
+    margin-left: 1100px;
+  }
+  .bar-icon {
+    position: sticky;
+    margin-top: 5px;
+    border: solid 3px rgb(114, 43, 3);
+    width: 45px;
+    height: 35px;
+    left: 1200px;
+    border-radius: 5px;
+  }
+  .title-text {
+    position: relative;
+    font-family: "Marcellus SC", serif;
+    font-weight: bold;
+    font-size: 70px;
+    margin-left: 160px;
+  }
+  .tech {
+    color: rgb(114, 43, 3);
+    text-shadow: 3px 3px 3px black;
+  }
+  .mate {
+    color: rgb(207, 164, 81);
+  }
+  .logo {
+    width: 100%;
+  }
+  .logo-div {
+    box-shadow: 9px 9px 5px -2px rgb(114, 43, 3);
+  }
+  .match-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .match-container-grid {
+    display: grid;
+    grid-template-columns:
+      [col-results-start]
+      50%
+      [col-results-end col-email-start col-hold-start]
+      25%
+      [col-hold-end col-trash-start]
+      25%
+      [col-email-end col-trash-end];
+
+    grid-template-rows:
+      [row-results-start row-email-start]
+      50%
+      [row-email-end row-trash-start row-hold-start]
+      50%
+      [row-results-end row-trash-end row-hold-end];
+  }
+  .match-container-item {
+    margin: 10px;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    margin: 10px;
+  }
+
+  .match-container-item-grid {
+    display: grid;
+    grid-template-columns:
+      [col-sub-1]
+      50%
+      [col-sub-2]
+      50%
+      [col-sub-3];
+
+    grid-template-rows:
+      [row-sub-1]
+      30px
+      [row-sub-2]
+      30px
+      [row-sub-3]
+      auto
+      [row-sub-4]
+      30px
+      [row-sub-5];
+    /*	width: 100%;
+        height: 100%;*/
+  }
+
+  .match-subcontainer-title-large {
+    grid-column-start: col-sub-1;
+    grid-column-end: col-sub-2;
+
+    grid-row-start: row-sub-1;
+    grid-row-end: row-sub-2;
+
+    background-color: red;
+  }
+
+  .match-subcontainer-title-small {
+    grid-column-start: col-sub-1;
+    grid-column-end: col-sub-3;
+
+    grid-row-start: row-sub-1;
+    grid-row-end: row-sub-2;
+
+    background-color: red;
+  }
+
+  .match-subcontainer-description-large {
+    grid-column-start: col-sub-2;
+    grid-column-end: col-sub-3;
+
+    grid-row-start: row-sub-1;
+    grid-row-end: row-sub-2;
+
+    background-color: orange;
+  }
+
+  .match-subcontainer-description-small {
+    grid-column-start: col-sub-1;
+    grid-column-end: col-sub-3;
+
+    grid-row-start: row-sub-2;
+    grid-row-end: row-sub-3;
+
+    background-color: orange;
+  }
+
+  .match-subcontainer-result-large {
+    grid-column-start: col-sub-1;
+    grid-column-end: col-sub-3;
+
+    grid-row-start: row-sub-2;
+    grid-row-end: row-sub-4;
+
+    background-color: yellow;
+  }
+
+  .match-subcontainer-result-small {
+    grid-column-start: col-sub-1;
+    grid-column-end: col-sub-4;
+
+    grid-row-start: row-sub-3;
+    grid-row-end: row-sub-4;
+
+    background-color: yellow;
+  }
+
+  .match-subcontainer-submit {
+    grid-column-start: col-sub-1;
+    grid-column-end: col-sub-3;
+
+    grid-row-start: row-sub-4;
+    grid-row-end: row-sub-5;
+
+    background-color: purple;
+  }
+
+  .match-results {
+    grid-column-start: col-results-start;
+    grid-column-end: col-results-end;
+
+    grid-row-start: row-results-start;
+    grid-row-end: row-results-end;
+
+    border-color: red;
+
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+
+  .match-options-email {
+    grid-column-start: col-email-start;
+    grid-column-end: col-email-end;
+
+    grid-row-start: row-email-start;
+    grid-row-end: row-email-end;
+
+    border-color: orange;
+  }
+
+  .match-options-hold {
+    grid-column-start: col-hold-start;
+    grid-column-end: col-hold-end;
+
+    grid-row-start: row-hold-start;
+    grid-row-end: row-hold-end;
+
+    border-color: blue;
+  }
+
+  .match-options-trash {
+    grid-column-start: col-trash-start;
+    grid-column-end: col-trash-end;
+
+    grid-row-start: row-trash-start;
+    grid-row-end: row-trash-end;
+
+    border-color: green;
+  }
+
+  .card {
+    width: 225px;
+
+    margin: 10px;
+  }
 }
